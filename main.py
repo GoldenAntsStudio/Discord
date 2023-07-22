@@ -1,7 +1,7 @@
 import discord
 import time
 from gen_pass import gen_pass_test
-
+from coin_game import coin_game
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -27,7 +27,9 @@ async def on_message(message):
 
     elif message.content.startswith('/balance'):
         await message.channel.send(str(coins))
-    
+    elif message.content.startswith('/coin'):
+        await message.channel.send(str(coin_game()))
+
     elif message.content.startswith('/upgrade'):
         if coins >= 20:
             coins-=20
@@ -39,4 +41,4 @@ async def on_message(message):
     
 
 
-client.run("MTEzMjI3NzQxMDYzNzgyNDA1MQ.GJ-C21.7IM3haMdi4FxjWVprlMnbvyh-EkeBTSZDBsNME")
+client.run("MTEzMjI3NzQxMDYzNzgyNDA1MQ.GhJaWU.WmYa6R8FRx5HznBZrMhJsdNUzoAgjCFFu38a3c")
