@@ -1,5 +1,5 @@
 import discord
-import time
+
 from gen_pass import gen_pass_test
 from coin_game import coin_game
 
@@ -21,6 +21,9 @@ async def on_message(message):
     if message.author == client.user:
         return
     
+    if message.content.startswith('/help'):
+        await message.channel.send(f'Команды \n /mine - Майнить \n /balance - Баланс \n /coin - Орел и решка \n /upgrade - Улучшение')
+
     if message.content.startswith('/mine'):
         coins += coinsPerMine
         await message.channel.send(f"+{coinsPerMine}")
@@ -41,4 +44,4 @@ async def on_message(message):
     
 
 
-client.run("MTEzMjI3NzQxMDYzNzgyNDA1MQ.GhJaWU.WmYa6R8FRx5HznBZrMhJsdNUzoAgjCFFu38a3c")
+client.run("MTEzMjI3NzQxMDYzNzgyNDA1MQ.G3zT7f.0WiIjc0D9aI8l7Zh0DadbBYmbOALedL7JB8-DQ")
